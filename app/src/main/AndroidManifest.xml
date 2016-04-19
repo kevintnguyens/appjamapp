@@ -22,7 +22,9 @@
                 android:name="android.support.MainActivity"
                 android:value="com.example.kevin.myapplication.MainActivity" />
         </activity>
-
+        <uses-permission android:name="android.permission.CAMERA" />
+        <uses-feature android:name="android.hardware.camera" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     </application>
 
 </manifest>

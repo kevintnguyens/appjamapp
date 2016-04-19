@@ -12,24 +12,25 @@ import android.view.View;
 import android.content.Context;
 
 //import
-
+//static String wolf_string;
 public class MainActivity extends AppCompatActivity {
-    public String wolf_string;
+    public  String wolf_string;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        wolf_string= "wolf_1";
         setContentView(R.layout.activity_main);
         ImageButton button_1 = (ImageButton)findViewById(R.id.imageButton);
         ImageButton button_2 = (ImageButton)findViewById(R.id.imageButton2);
         ImageButton button_3  = (ImageButton)findViewById(R.id.imageButton3);
-        Button next_button = (Button)findViewById(R.id.button);
-        final String[] wolf_string = new String[1];
+        final Button next_button = (Button)findViewById(R.id.button);
+
         next_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),Main2Activity.class);
-                i.putExtra("wolf","wolf_1");
+                i.putExtra("wolf",wolf_string);
                 startActivity(i);
             }
         });
@@ -37,15 +38,24 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-
+                wolf_string="wolf_1";
+                next_button.setVisibility(1);
             }
         });
         button_2.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                this.wolf_string = "wolf_2";
+                wolf_string = "wolf_2";
+                next_button.setVisibility(1);
+            }
+        });
+        button_3.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                wolf_string = "wolf_3";
+                next_button.setVisibility(1);
             }
         });
     }
